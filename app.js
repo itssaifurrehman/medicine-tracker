@@ -232,7 +232,6 @@ if (closeSidebarBtn) {
     scheduleInputs.forEach((input) => (input.value = 0));
     scheduleInputsDiv.classList.add("hidden");
     doseSummary.textContent = "Assigned doses: 0";
-    document.getElementById("medicineDuration").add("hidden");
     loadMedicines();
   });
 
