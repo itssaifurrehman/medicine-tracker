@@ -1,96 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Medicine Tracker</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Application Center</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script type="module" src="firebase-config.js"></script>
 </head>
+<body class="bg-gray-50 text-gray-800 min-h-screen flex flex-col items-center px-4 py-10">
 
-<body class="flex flex-col h-screen">
-  <!-- Header -->
-  <header class="shadow bg-white sticky top-0 z-50">
-    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-      <h1 class="text-2xl font-bold text-blue-700">💊 Broodle</h1>
-      <div>
-        <span id="userName" class="font-semibold mr-1 text-gray-700"></span>
-        <button id="loginBtn" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-all">
-          Login
-        </button>
-        <button id="logoutBtn" class="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700 transition-all hidden">
-          Logout
-        </button>
-      </div>
-    </div>
+  <header class="text-center mb-10">
+    <h1 class="text-3xl sm:text-4xl font-bold text-blue-700 mb-2">Welcome to My Application Center</h1>
+    <p class="text-lg sm:text-xl text-gray-600">Here you can find some of the projects I developed. Click on a project to proceed.</p>
   </header>
 
-  <div class="flex flex-1 overflow-hidden">
-<!-- Hamburger toggle for mobile -->
-<div class="md:hidden p-4">
-  <button id="toggleSidebar" class="text-gray-700 focus:outline-none">
-    <!-- Hamburger Icon -->
-    <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg">
-      <path stroke-linecap="round" stroke-linejoin="round"
-        d="M4 6h16M4 12h16M4 18h16"></path>
-    </svg>
-  </button>
-</div>
+  <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl w-full">
+    <!-- Project Card 1 -->
+    <a href="home.html" class="bg-white rounded-xl shadow-md hover:shadow-lg transition p-6 border border-gray-200 hover:border-blue-500 hover:bg-blue-50">
+      <h2 class="text-xl font-semibold text-blue-700 mb-2">Medicine Tracker App</h2>
+      <p class="text-sm text-gray-600">Track your daily medication doses, schedule, and inventory easily.</p>
+    </a>
 
-<!-- Sidebar -->
-<aside id="sidebar"
-  class="w-45 bg-gray-100 border-r p-4 fixed top-0 left-0 h-full z-50 transform -translate-x-full transition-transform duration-300 md:relative md:translate-x-0 md:block">
-  <!-- Close button (mobile only) -->
-  <div class="md:hidden flex justify-end">
-    <button id="closeSidebar" class="text-gray-700 focus:outline-none mb-4">
-      <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg">
-        <path stroke-linecap="round" stroke-linejoin="round"
-          d="M6 18L18 6M6 6l12 12"></path>
-      </svg>
-    </button>
-  </div>
+    <!-- Project Card 2 -->
+    <!-- <a href="your-project2.html" class="bg-white rounded-xl shadow-md hover:shadow-lg transition p-6 border border-gray-200 hover:border-blue-500 hover:bg-blue-50">
+      <h2 class="text-xl font-semibold text-blue-700 mb-2">POS System</h2>
+      <p class="text-sm text-gray-600">Custom-built POS system for agricultural products and daily sales.</p>
+    </a> -->
 
-  <!-- Navigation -->
-  <nav class="space-y-2">
-    <button id="addMed" data-auth-required class="block w-full text-left px-4 py-2 rounded hover:bg-blue-100">
-      Manage Medicine
-    </button>
-  </nav>
-</aside>
+    <!-- Project Card 3 -->
+    <!-- <a href="your-project3.html" class="bg-white rounded-xl shadow-md hover:shadow-lg transition p-6 border border-gray-200 hover:border-blue-500 hover:bg-blue-50">
+      <h2 class="text-xl font-semibold text-blue-700 mb-2">Resume Builder</h2>
+      <p class="text-sm text-gray-600">Modern resume builder to generate professional CVs with ease.</p>
+    </a> -->
 
-    <!-- Sidebar -->
-    <!-- <aside class="w-64 bg-gray-100 border-r p-4">
-      <nav class="space-y-2">
-        <button id="viewMed" data-auth-required class="block w-full text-left px-4 py-2 rounded hover:bg-blue-100">
-          View Medicines
-        </button>
-        <button id="addMed" data-auth-required class="block w-full text-left px-4 py-2 rounded hover:bg-blue-100">
-          Manage Medicine
-        </button>
-      </nav>
-    </aside> -->
+    <!-- Add more projects as needed -->
+  </section>
 
-    <!-- Main Content Area -->
-    <main id="mainContent" class="flex-1 overflow-y-auto px-2 py-6 sm:px-4">
-  <!-- Default content will load here -->
-  <div class="max-w-md mx-auto mt-6 p-4 bg-white shadow-lg rounded-2xl border border-gray-200 text-center">
-    <p class="text-gray-800 text-base sm:text-lg font-medium">
-      Press the <span class="font-semibold text-blue-600">Login</span> button to sign in with Google.
-    </p>
-  </div>
-</main>
-
-  </div>
-
-  <!-- Footer -->
-  <footer class="text-center text-sm text-gray-500 mt-12 mb-4">
-    &copy; 2025 Medicine Tracker. All rights reserved. Developed by <a href="https://www.saifurrehman.com" class="text-blue-600 hover:underline" target="_blank">Saif Ur Rehman</a>.
-  </footer>
-
-  <script type="module" src="index.js"></script>
 </body>
-
 </html>
