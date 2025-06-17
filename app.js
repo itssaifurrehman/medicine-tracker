@@ -218,11 +218,8 @@ if (closeSidebarBtn) {
       frequency: freq,
       schedule,
       duration: `Until ${dayText}`, // now this works perfectly
-      createdAt: editingDocId
-        ? existingDoc.createdAt
-        : new Date().toISOString(), // ← store date
+      updatedAt: new Date().toISOString(), // always update this
     };
-
     if (editingDocId) {
       await updateDoc(doc(db, "medicines", editingDocId), data);
       editingDocId = null;
