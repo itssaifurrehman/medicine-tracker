@@ -112,6 +112,22 @@ export function initDOM() {
     }
   });
 
+  const toggleSidebarBtn = document.getElementById('toggleSidebar');
+const closeSidebarBtn = document.getElementById('closeSidebar');
+const sidebar = document.getElementById('sidebar');
+
+if (toggleSidebarBtn) {
+  toggleSidebarBtn.addEventListener('click', () => {
+    sidebar.classList.toggle('-translate-x-full');
+  });
+}
+
+if (closeSidebarBtn) {
+  closeSidebarBtn.addEventListener('click', () => {
+    sidebar.classList.add('-translate-x-full');
+  });
+}
+
 
   document.addEventListener("DOMContentLoaded", () => {
     const totalQuantity = document.getElementById("totalQuantity");

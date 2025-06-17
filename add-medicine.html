@@ -42,26 +42,32 @@
 <section id="formSection" class="hidden">
   <!-- Medicine form appears in userSection -->
 </section>
+<div class="overflow-x-auto px-4 mb-4">
+  <div class="inline-flex gap-2 whitespace-nowrap text-sm">
+    <select id="sortName"
+      class="px-2 py-1 rounded border border-gray-300 bg-white shadow-sm focus:outline-none focus:ring-1 focus:ring-blue-500">
+      <option value="">Name</option>
+      <option value="asc" selected>A-Z</option>
+      <option value="desc">Z-A</option>
+    </select>
 
-<div class="flex justify-end gap-4 mb-4 px-4">
-  <select id="sortName" class="px-4 py-2 rounded-lg border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm">
-    <option value="">Sort by Name</option>
-    <option value="asc" selected>A-Z</option>
-    <option value="desc">Z-A</option>
-  </select>
+    <select id="sortFrequency"
+      class="px-2 py-1 rounded border border-gray-300 bg-white shadow-sm focus:outline-none focus:ring-1 focus:ring-blue-500">
+      <option value="">Frequency</option>
+      <option value="asc">Low</option>
+      <option value="desc">High</option>
+    </select>
 
-  <select id="sortFrequency" class="px-4 py-2 rounded-lg border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm">
-    <option value="">Sort by Times a Day</option>
-    <option value="asc">Low to High</option>
-    <option value="desc">High to Low</option>
-  </select>
-
-  <select id="sortDosesLeft" class="px-4 py-2 rounded-lg border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm">
-    <option value="">Sort by Doses Left</option>
-    <option value="asc">Low to High</option>
-    <option value="desc">High to Low</option>
-  </select>
+    <select id="sortDosesLeft"
+      class="px-2 py-1 rounded border border-gray-300 bg-white shadow-sm focus:outline-none focus:ring-1 focus:ring-blue-500">
+      <option value="">Doses Left</option>
+      <option value="asc">Low</option>
+      <option value="desc">High</option>
+    </select>
+  </div>
 </div>
+
+
 
 
 
